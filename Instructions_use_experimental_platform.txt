@@ -1,0 +1,37 @@
+
+Instructions to encode and decode all 14 sequences with 14x4 = 56 QPs
+
+/******************************************************************
+1. Running an experiment
+2. Extracting the experiment result data after the run
+3. Modifying the dataset (test sequences) folder path in the batch file before running the experiment
+/******************************************************************
+
+1. Running an experiment
+Copy the generated executable to X:\Experimental_Platform_14seq_AVS\01 or X:\Experimental_Platform_14seq_HEVC\01  //Copy the executable to the experimental platform
+Open a "Command Prompt" window
+cd X:\Experimental_Platform_14seq_AVS\01 or X:\Experimental_Platform_14seq_HEVC\01  //Go to the folder where the experimental platform is located
+Run copy_exe.bat                      //copy the executable files to each window.
+Run run_all.bat                      //open the windows with serial numbers 01-18
+
+/******************************************************************
+
+2. Extracting the experiment result data after the run
+Take extracting AI data as an example
+Open a "Command Prompt" window
+cd X:\Experimental_Platform_14seq_AVS\ai_rexInfo or X:\Experimental_Platform_14seq_HEVC\ai_rexInfo  //Go to the directory where the experimental platform is located
+Run extract_file.bat ai
+cd X:\Experimental_Platform_14seq_AVS\ai_rexInfo or Experimental_Platform_14seq_HEVC\ai_rexInfo  //Go to the directory where the experimental platform is located
+Run rExInfo.bat ai
+Open the ai file
+The data in ExtractPSNR.txt, ExtractEnTime.txt, and ExtractDeTime.txt are PSNR, encoding time, and decoding time respectively.
+
+/******************************************************************
+
+3. Modifying the dataset (test sequemces) folder path in the batch file before running the experiment
+The current directory where the datasets for the 14 AVSs in the Experimental_Platform_14seq_AVS file are stored is: D:\seq\AVS3_SCC_8bit_420
+Open oneqp.bat to modify the dataset directory  //set seqpath=D:\seq\AVS3_SCC_8bit_420
+Then copy the modified oneqp.bat file to X:\Experimental_Platform_14seq_AVS\01
+Open a "Command Prompt" window
+cd X:\Experimental_Platform_14seq_AVS\01
+Run copy_qp.bat //Copy the oneqp.bat file with the modified path to each window
